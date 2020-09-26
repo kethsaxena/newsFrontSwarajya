@@ -1,4 +1,6 @@
-[
+var news = 
+    [
+
     {
         "headline": "FinCEN Files | Antiques smuggler in TN jail, and a trade that flourished even after his arrest",
         "links": "https:\/\/indianexpress.com\/article\/express-exclusive\/fincen-filesremove-antiques-smuggler-in-tamil-nadu-jail-and-a-trade-that-flourished-even-after-his-arrest-6606764\/",
@@ -146,4 +148,4 @@
         "Paper_Name": "The_Hindu",
         "Story_type": "Main_Story"
     }
-]
+ ];
