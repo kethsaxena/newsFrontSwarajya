@@ -1,5 +1,5 @@
 import pandas as pd
-
+import json 
 
 projPath=r"D:\python\newsFrontSwarajya\data"
 file = projPath+r"\news.csv"
@@ -9,19 +9,31 @@ data = pd.read_csv(file)
 compressed = data.loc[:,['Paper_Name','headline',"links"]]
 
 outData=dict.fromkeys(compressed['Paper_Name'].unique(),[])
-#print(compressed.to_dict('list'))
-# data.to_json(projPath+outfile,orient="records")
+row_iterator = compressed.itertuples()
 
-l=[]
 
-for index, row in compressed.iterrows():
-    if row["Paper_Name"] in outData:
-        outData[row["Paper_Name"]].append({"headline":row['headline'],"links":row['links']})
-    else:
-        pass
 
-        #l.append({"headline":row['headline'],"links":row['links']})
 
-print(outData['The_HT'])
+for key in outData.keys():
+    set =compressed[compressed.Paper_Name==key]
+    outData[key]=set.loc[:,["headline","links"]].to_dict("records") 
+    # print("-----------")
+    # print("-----------")
 
-#print(l[1])
+#     if key==row.Paper_Name:
+#         l.append({"headline":row.headline,"links":row.links})
+#     print(l)
+# l=[]
+
+
+#print(outData)
+#outData['Indian_Express']=[{"headline":1,"link":2},{"headline":2,"link":3}]
+            
+        
+
+
+
+file=projPath+"\\"+outfile
+out_file = open(file, "w") 
+json.dump(outData,out_file,indent=4)
+out_file.close() 
