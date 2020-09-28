@@ -110,3 +110,6 @@ const filtered = Object.keys(news)
   }, {});
 
 console.log(filtered);
+
+// ADD LINKS TO EACH NEWSPAPER;
+$("tr").append(`<tr><td><a href={filtered[0].links}}>{{filtered[0].headline}}}</a></td></tr>`) 
