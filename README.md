@@ -1,3 +1,3 @@
 # newsFrontSwarajya
 
-A simple python Front for news aggregation
+A simple new aggregator  Front End for news aggregation
